@@ -30,13 +30,15 @@ public class CoEuSReproducibleTest {
 		long startTime = System.nanoTime();
 		coeus.setIncrement(CoEuS.Increment.SIMPLE);
 		coeus.setSizeDetermination(CoEuS.SizeDetermination.GROUND_TRUTH);
+		
+		double f1score = coeus.execute();
+		
 		long endTime = System.nanoTime();
 		long duration = (endTime - startTime);
 		
-		double f1score = coeus.execute();
-		assertEquals(0.8, f1score, 0.01);
+		assertEquals(0.76, f1score, 0.01);
 		System.out.println("F1-score: " + f1score);
-		System.out.println("Milliseconds per community: " + duration / (1000000D * 963));
+		System.out.println("Milliseconds per community: " + duration / (1000000D * 936));
 		
 		
 	}
@@ -49,13 +51,15 @@ public class CoEuSReproducibleTest {
 		long startTime = System.nanoTime();
 		coeus.setIncrement(CoEuS.Increment.EDGE_QUALITY);
 		coeus.setSizeDetermination(CoEuS.SizeDetermination.GROUND_TRUTH);
+		
+		double f1score = coeus.execute();
+		
 		long endTime = System.nanoTime();
 		long duration = (endTime - startTime);
 		
-		double f1score = coeus.execute();
 		assertEquals(0.85, f1score, 0.01);
 		System.out.println("F1-score: " + f1score);
-		System.out.println("Milliseconds per community: " + duration / (1000000D * 963));
+		System.out.println("Milliseconds per community: " + duration / (1000000D * 936));
 		
 	}
 	
@@ -66,13 +70,15 @@ public class CoEuSReproducibleTest {
 		long startTime = System.nanoTime();
 		coeus.setIncrement(CoEuS.Increment.EDGE_QUALITY);
 		coeus.setSizeDetermination(CoEuS.SizeDetermination.DROP_TAIL);
+		
+		double f1score = coeus.execute();
+		
 		long endTime = System.nanoTime();
 		long duration = (endTime - startTime);
 		
-		double f1score = coeus.execute();
 		assertEquals(0.8, f1score, 0.01);
 		System.out.println("F1-score: " + f1score);
-		System.out.println("Milliseconds per community: " + duration / (1000000D * 963));
+		System.out.println("Milliseconds per community: " + duration / (1000000D * 936));
 		
 	}
 	

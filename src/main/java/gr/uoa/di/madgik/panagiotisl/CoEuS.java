@@ -237,6 +237,10 @@ public class CoEuS {
 	}
 
 	public Double execute() throws IOException {
+		
+		total = 0;
+		count = 0;
+		
 		BufferedReader gtcFileBR = new BufferedReader(new FileReader(new File(
 				this.inputGroundTruthCommunities)));
 
